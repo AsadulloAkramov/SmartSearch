@@ -1,5 +1,5 @@
-# SmartSearch
-SmartSearch technical task || 2022
+# BrightSearch
+BrightSearch technical task || 2022
 
 ### Setup environment
 
