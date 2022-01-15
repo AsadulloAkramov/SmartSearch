@@ -3,9 +3,7 @@ import { v4 as uuid } from "uuid";
 
 interface IStaffList {
   _id:string,
-  firstName:string,
-  lastName:string,
-  middleName:string,
+  fullName:string,
   branch:string,
   job:string,
   address:RefType
@@ -17,15 +15,7 @@ const StaffListSchema = new Schema<IStaffList>(
       type:String,
       default:uuid()
     },
-    firstName:{
-      type:String,
-      required:true
-    },
-    lastName:{
-      type:String,
-      required:true
-    },
-    middleName:{
+    fullName:{
       type:String,
       required:true
     },

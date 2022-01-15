@@ -17,26 +17,10 @@ export default class StaffListRepository {
   async list(pattern){
     try{
       const searchValues = pattern.split(' ');
-      const columns = ['firstName' , 'lastName', 'middleName' , 'job' , 'address_info.state' ,'address_info.region']
-      const query = this.search.Builder(searchValues , ['firstName' , 'lastName' , 'job'])
+      const pipeline = this.search.aggregatePipeline(searchValues);
+      const docs = await StaffList.aggregate(pipeline)
       
-      const doc = await StaffList.aggregate([
-        {
-          $lookup:{
-            from:"staffaddresses",
-            localField:"address",
-            foreignField:"_id",
-            as:"address_info"
-          }
-        },
-        {
-          $match:{
-           $or:[this.search.Builder(searchValues , columns )]
-          }
-        }
-      ])
-      // console.log(query)
-      return doc;
+      return docs;
     }
     catch(error){
       throw new Error( `${error}`);

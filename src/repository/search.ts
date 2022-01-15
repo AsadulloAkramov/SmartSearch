@@ -1,41 +1,81 @@
-import { FilterQuery , Model } from 'mongoose'
-type orQueryResult = {
-  // eslint-disable-next-line @typescript-eslint/ban-types
-  $or: {}[];
-};
 
+type andQueryResult = {
+  // eslint-disable-next-line @typescript-eslint/ban-types
+  $and: {}[];
+};
 
 export default class Search {
 
-  public Builder(
+  public queryBuilder(
     patterns:string[],
     columns:string[]
-  ):orQueryResult {
+  ):andQueryResult {
     let finalQuery:any =[];
-     for(let columnName of columns){
-       for(let pattern of patterns){
-         const column={};
-         column[columnName]={
-           $regex:this.fullTextSearchRegex(pattern)
-         }
-         finalQuery.push(column)
-       }  
+     for (let pattern of patterns){
+       const smartSearchResult={
+         smartSearchResult: this.fullTextSearchRegex(pattern)
+       }
+       finalQuery.push(smartSearchResult)
      }
-    return {
-      $or:finalQuery
-    };
+    return finalQuery;
   }
 
   public fullTextSearchRegex(pattern: string): RegExp {
     return new RegExp(`.*${pattern}.*`, 'i');
   }
 
-  public findAll<T>(model:Model<T> ,patterns:string[], columns:string[]){
-    return model.find({
-      $match:{
-        $or:this.Builder(patterns , columns)
+
+  public aggregatePipeline(patterns: string[]){
+
+    const columns = ['fullName', 'job', 'address_info.state', 'address_info.region'];
+                  
+
+    const $lookupAddres ={
+      $lookup:{
+        from:"staffaddresses",
+        localField:"address",
+        foreignField:"_id",
+        as:"address_info"
       }
-    })
+    };
+
+    const $unwindAddres ={
+      $unwind:{
+        path:'$address_info',
+        preserveNullAndEmptyArrays:true
+      }
+    };
+
+    const $addFields= {
+      $addFields:{
+        smartSearchResult: {
+          $concat: ['$fullName', ' ', '$job',
+                    '$address_info.state' , ' ', '$address_info.region']
+        }
+      }
+    };
+
+    const $match ={
+      $match:{
+        $and: this.queryBuilder(patterns,columns)
+      }
+    };
+
+    const $project ={
+      $project:{
+        smartSearchResult:0
+      }
+    };
+
+    const $pipeline = [
+      $lookupAddres,
+      $unwindAddres,
+      $addFields,
+      $match,
+      $project
+    ];
+
+    return $pipeline;
   }
 
 
