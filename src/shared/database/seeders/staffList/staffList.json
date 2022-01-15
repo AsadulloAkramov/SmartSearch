@@ -1,0 +1,101 @@
+[
+  {
+    "_id":"651e728d-c475-4dfd-95be-979023f161fd",
+    "firstName":"Nazarov",
+    "lastName":"Zafar",
+    "middleName":"Ziyod o'g'li",
+    "branch":"Madaniyat vazirligi",
+    "job":"Dizayner",
+    "address":"7312a076-75c3-4e99-a840-134105020994"
+  },
+
+  {
+    "_id":"e2259e22-4fd4-4c44-bab6-864d28732fa6",
+    "firstName":"Afandiyev",
+    "lastName":"Nabi",
+    "middleName":"Dilshod o'g'li",
+    "branch":"O'rta maxsus ta'lim",
+    "job":"Metodist",
+    "address":"fb0a41c0-47f0-4f5a-bcb0-59b6207dff86"
+  },
+
+  {
+    "_id":"9b89ee25-e08f-4b1b-b7e9-e1863b07822a",
+    "firstName":"Nabiyev",
+    "lastName":"Safar",
+    "middleName":"Ibrohim o'g'li",
+    "branch":"O'rta maxsus ta'lim",
+    "job":"Zam direktor",
+    "address":"076f2bd8-33bf-446f-9fd9-ca104d25e9c5"
+  },
+
+  {
+    "_id":"8d0c3f28-71b1-4973-822b-a7ed654dae68",
+    "firstName":"Dilmurorodov",
+    "lastName":"Muzaffar",
+    "middleName":"Qalandarovich",
+    "branch":"Noqonuniy",
+    "job":"Kriminalist",
+    "address":"bb88932a-1f88-4028-bcea-e713c1191792"
+  },
+
+  {
+    "_id":"95f3bf91-815c-4504-9d86-5e4ef2d97573",
+    "firstName":"Jamoliddinov",
+    "lastName":"Husniddin",
+    "middleName":"Asomiddin o'g'li",
+    "branch":"Marketing",
+    "job":"SMM",
+    "address":"04399674-e3a1-4e6a-9fe4-463f24c8e263"
+  },
+
+  {
+    "_id":"52875e8f-d619-42e4-9b9e-5cd58140fe2a",
+    "firstName":"Jamoliddinov",
+    "lastName":"Sharobiddin",
+    "middleName":"Alisher o'g'li",
+    "branch":"Oliy ta'lim",
+    "job":"Akademik",
+    "address":"8545e150-3792-4fe2-b099-62b3ba06839d"
+  },
+
+
+  {
+    "_id":"d3e39f34-2e5a-493b-b18d-ff55d580bac0",
+    "firstName":"Cristiano",
+    "lastName":"Ronaldo",
+    "middleName":"Dos Santos Aveiro",
+    "branch":"Sport",
+    "job":"Futbolchi",
+    "address":"064fc597-492e-4a77-9b3e-9eafd0ff801e"
+  },
+
+  {
+    "_id":"25edb20f-db56-4313-bb64-e8c3d09f570b",
+    "firstName":"Rahimov",
+    "lastName":"Ilxomjon",
+    "middleName":"Akramovich",
+    "branch":"Buxgalteriya",
+    "job":"Hisobchi",
+    "address":"7fa026ac-1a63-4fab-96a3-774210204fa7"
+  },
+
+  {
+    "_id":"6786f631-7e36-4932-8d27-bc6b62d957c5",
+    "firstName":"G'ofurboyev",
+    "lastName":"Zokirjon",
+    "middleName":"Tohirjon o'g'li",
+    "branch":"Payme",
+    "job":"Node.js softwaree engineer",
+    "address":"8545e150-3792-4fe2-b099-62b3ba06839d"
+  },
+  {
+    "_id":"5bb424c5-de0a-4e2a-9404-c5a240ff561e",
+    "firstName":"Akramov",
+    "lastName":"Asadullo",
+    "middleName":"Ilhomjon o'g'li",
+    "branch":"Payme",
+    "job":"Node.js softwaree engineer",
+    "address":"bb88932a-1f88-4028-bcea-e713c1191792"
+  }
+]

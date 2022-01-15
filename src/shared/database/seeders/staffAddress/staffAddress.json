@@ -1,0 +1,42 @@
+[
+  {
+    "_id":"7312a076-75c3-4e99-a840-134105020994",
+    "state":"Toshkent shahri",
+    "region":"Shayxontoxur"
+  },
+  {
+    "_id":"fb0a41c0-47f0-4f5a-bcb0-59b6207dff86",
+    "state":"Toshkent shahri",
+    "region":"Yunusobod"
+  },
+  {
+    "_id":"076f2bd8-33bf-446f-9fd9-ca104d25e9c5",
+    "state":"Toshkent shahri",
+    "region":"Yakkasaroy"
+  },
+  {
+    "_id":"bb88932a-1f88-4028-bcea-e713c1191792",
+    "state":"Farg'ona viloyati",
+    "region":"Farg'ona"
+  },
+  {
+    "_id":"04399674-e3a1-4e6a-9fe4-463f24c8e263",
+    "state":"Farg'ona viloyati",
+    "region":"Oltiariq"
+  },
+  {
+    "_id":"8545e150-3792-4fe2-b099-62b3ba06839d",
+    "state":"Namangan viloyati",
+    "region":"Uychi"
+  },
+  {
+    "_id":"064fc597-492e-4a77-9b3e-9eafd0ff801e",
+    "state":"Samarqand viloyati",
+    "region":"Urgut"
+  },
+  {
+    "_id":"7fa026ac-1a63-4fab-96a3-774210204fa7",
+    "state":"Xorazm viloyati",
+    "region":"Xozarsp"
+  }
+]
