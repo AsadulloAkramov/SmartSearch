@@ -19,6 +19,3 @@ Starts the application in development using `nodemon` and `ts-node` to do hot re
 
 Enter this url in postman or other tools like ThundraClient in VsCode
 
-#### `npm run start`
-
-Starts the application in development using `nodemon` and `ts-node` to do hot reloading.
