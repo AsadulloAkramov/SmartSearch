@@ -1,11 +1,11 @@
 {
-  "name": "smartsearch",
+  "name": "brightSearch",
   "version": "1.0.0",
   "description": "Bright Search app in Node.js",
   "main": "build/index.js",
   "scripts": {
     "build": "tsc",
-    "start:dev": "nodemon ./src/index.ts",
+    "start": "nodemon ./src/index.ts",
     "seed:mongo": "ts-node ./src/shared/database/seeders/index.ts"
   },
   "repository": {
