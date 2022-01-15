@@ -6,7 +6,7 @@ SmartSearch technical task || 2022
 cp .env.example .env
 Write application envoirment variables in to .env file
 
-### npm install and npm install --also=dev
+### npm install 
 Install all packages that is placed dependencies and dev dependencies
 
 ### npm run seed:mongo
