@@ -12,10 +12,20 @@ export default class Search {
   ):andQueryResult {
     let finalQuery:any =[];
      for (let pattern of patterns){
-       const smartSearchResult={
-         smartSearchResult: this.fullTextSearchRegex(pattern)
-       }
-       finalQuery.push(smartSearchResult)
+        const $orQuery= columns.map((columnName:string)=> {
+          const column ={};
+          column[columnName] = this.fullTextSearchRegex(pattern);
+          return column;
+        })
+        const sequence ={
+          $or:$orQuery
+        }
+
+        finalQuery = [...finalQuery , sequence];
+      //  const smartSearchResult={
+      //    smartSearchResult: this.fullTextSearchRegex(pattern)
+      //  }
+      //  finalQuery.push(smartSearchResult)
      }
     return finalQuery;
   }
@@ -39,21 +49,21 @@ export default class Search {
       }
     };
 
-    const $unwindAddres ={
-      $unwind:{
-        path:'$address_info',
-        preserveNullAndEmptyArrays:true
-      }
-    };
+    // const $unwindAddres ={
+    //   $unwind:{
+    //     path:'$address_info',
+    //     preserveNullAndEmptyArrays:true
+    //   }
+    // };
 
-    const $addFields= {
-      $addFields:{
-        smartSearchResult: {
-          $concat: ['$fullName', ' ', '$job',
-                    '$address_info.state' , ' ', '$address_info.region']
-        }
-      }
-    };
+    // const $addFields= {
+    //   $addFields:{
+    //     smartSearchResult: {
+    //       $concat: ['$fullName', ' ', '$job',
+    //                 '$address_info.state' , ' ', '$address_info.region']
+    //     }
+    //   }
+    // };
 
     const $match ={
       $match:{
@@ -61,18 +71,16 @@ export default class Search {
       }
     };
 
-    const $project ={
-      $project:{
-        smartSearchResult:0
-      }
-    };
+    // const $project ={
+    //   $project:{
+    //     smartSearchResult:0
+    //   }
+    // };
 
     const $pipeline = [
       $lookupAddres,
-      $unwindAddres,
-      $addFields,
-      $match,
-      $project
+      $match
+  
     ];
 
     return $pipeline;
