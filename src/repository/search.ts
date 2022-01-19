@@ -22,10 +22,7 @@ export default class Search {
         }
 
         finalQuery = [...finalQuery , sequence];
-      //  const smartSearchResult={
-      //    smartSearchResult: this.fullTextSearchRegex(pattern)
-      //  }
-      //  finalQuery.push(smartSearchResult)
+      
      }
     return finalQuery;
   }
@@ -49,21 +46,6 @@ export default class Search {
       }
     };
 
-    // const $unwindAddres ={
-    //   $unwind:{
-    //     path:'$address_info',
-    //     preserveNullAndEmptyArrays:true
-    //   }
-    // };
-
-    // const $addFields= {
-    //   $addFields:{
-    //     smartSearchResult: {
-    //       $concat: ['$fullName', ' ', '$job',
-    //                 '$address_info.state' , ' ', '$address_info.region']
-    //     }
-    //   }
-    // };
 
     const $match ={
       $match:{
@@ -71,16 +53,11 @@ export default class Search {
       }
     };
 
-    // const $project ={
-    //   $project:{
-    //     smartSearchResult:0
-    //   }
-    // };
+  
 
     const $pipeline = [
       $lookupAddres,
       $match
-  
     ];
 
     return $pipeline;
